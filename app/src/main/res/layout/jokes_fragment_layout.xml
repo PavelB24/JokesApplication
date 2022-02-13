@@ -5,14 +5,16 @@
     android:layout_height="match_parent"
     android:background="@color/secondary_color">
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/prime_color"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolbar_menu"
         app:title="@string/app_name" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

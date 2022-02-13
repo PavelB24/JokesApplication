@@ -2,6 +2,7 @@ package ru.barinov.jokesapplication.ui.jokesFragment
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.barinov.jokesapplication.R
 import ru.barinov.jokesapplication.databinding.JokesFragmentLayoutBinding
 import ru.barinov.jokesapplication.ui.JokesRecyclerViewAdapter
-import ru.barinov.jokesapplication.ui.activity.MainActivity
 
 private const val FAVORITES_BUTTON_STATE_KEY = "FAVORITES_BUTTON_STATE_KEY"
 
@@ -33,6 +33,8 @@ class JokesFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        setHasOptionsMenu(true)
         if (savedInstanceState != null) {
             onViewStateRestored(savedInstanceState)
         }
@@ -43,13 +45,11 @@ class JokesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        _binding = JokesFragmentLayoutBinding.inflate(inflater, container, false)
-        setHasOptionsMenu(true)
-        if (savedInstanceState!= null){
+        _binding = JokesFragmentLayoutBinding.inflate(inflater)
 
+        if (savedInstanceState!= null){
             val isChecked = savedInstanceState.getBoolean(FAVORITES_BUTTON_STATE_KEY)
             favoritesMenuButtonState = isChecked
-
         }
         return binding.root
     }
@@ -74,14 +74,14 @@ class JokesFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         if (!menu.hasVisibleItems()) {
-            inflater.inflate(R.menu.toolbar_menu, menu)
+           inflater.inflate(R.menu.toolbar_menu, menu)
 
-            val favButton = menu.findItem(R.id.favorites_menu_button)
-            favButton.isChecked= favoritesMenuButtonState
-            setToolbarFavoriteButtonState(favoritesMenuButtonState, favButton)
+        val favButton = menu.findItem(R.id.favorites_menu_button)
+           favButton.isChecked= favoritesMenuButtonState
+           setToolbarFavoriteButtonState(favoritesMenuButtonState, favButton)
 
-            super.onCreateOptionsMenu(menu, inflater)
-        }
+         super.onCreateOptionsMenu(menu, inflater)
+       }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -99,16 +99,16 @@ class JokesFragment : Fragment() {
     private fun setToolbarFavoriteButtonState(isChecked: Boolean, item: MenuItem) {
 
         if (isChecked) {
-            item.setIcon(R.drawable.ic_favourites_selected_star)
+            item.setIcon(R.drawable.ic_selected_star_img_foreground)
         } else {
-            item.setIcon(R.drawable.ic_favourites_black_star)
+            item.setIcon(R.drawable.ic_black_star_img_foreground)
         }
     }
 
     private fun initViews() {
 
         toolbar= binding.toolbar
-        (requireActivity() as MainActivity).setSupportActionBar(toolbar)
+        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
         recyclerView = binding.recyclerView
         recyclerView.adapter = adapter
 

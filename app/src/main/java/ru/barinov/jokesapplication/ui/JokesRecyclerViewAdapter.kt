@@ -32,10 +32,10 @@ class JokesRecyclerViewAdapter: RecyclerView.Adapter<JokeItemViewHolder>() {
     }
 
     private fun setFavoriteButtonState(isFavorite: Boolean, favButton: ImageButton) {
-        if (isFavorite){
-            favButton.setImageResource(R.drawable.ic_favourites_selected_star)
-        } else{
-            favButton.setImageResource(R.drawable.ic_favourites_black_star)
+        if (isFavorite) {
+            favButton.setImageResource(R.drawable.ic_selected_star_img_foreground)
+        } else {
+            favButton.setImageResource(R.drawable.ic_black_star_img_foreground)
         }
 
     }

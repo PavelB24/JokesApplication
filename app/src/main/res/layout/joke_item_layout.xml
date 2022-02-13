@@ -45,7 +45,7 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="8dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_favourites_black_star"
+                    android:src="@drawable/ic_black_star_img_foreground"
                     android:background="?selectableItemBackgroundBorderless"
                     android:gravity="center"
                     app:layout_constraintEnd_toEndOf="parent"

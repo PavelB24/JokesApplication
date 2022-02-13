@@ -1,7 +1,7 @@
 package ru.barinov.jokesapplication.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.*
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import ru.barinov.jokesapplication.R
@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -20,11 +21,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        val vebFragment = supportFragmentManager.findFragmentById(R.id.webFragment)
-        if(vebFragment!= null){
 
-        }
-        super.onBackPressed()
-    }
 }
