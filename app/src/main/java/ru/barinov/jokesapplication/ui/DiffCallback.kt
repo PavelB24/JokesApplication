@@ -1,6 +1,7 @@
 package ru.barinov.jokesapplication.ui
 
 import androidx.recyclerview.widget.DiffUtil
+import ru.barinov.jokesapplication.ui.uiModels.RecyclerViewItemModel
 
 class DiffCallback(
     private val oldList: List<RecyclerViewItemModel>,

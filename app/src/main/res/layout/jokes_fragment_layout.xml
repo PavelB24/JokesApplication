@@ -37,8 +37,8 @@
             android:id="@+id/jokes_to_load_value_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="Insert value"
+
+            android:hint="@string/insert_number_of_jokes_hint"
             android:inputType="number"
             android:maxLength="5" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -47,7 +47,7 @@
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RESET"
+        android:text="@string/reset_button_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

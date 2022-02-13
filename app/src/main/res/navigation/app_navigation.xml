@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
     app:startDestination="@id/jokesFragment">
     <fragment
         android:id="@+id/jokesFragment"
-        android:name="ru.barinov.jokesapplication.ui.JokesFragment"
+        android:name="ru.barinov.jokesapplication.ui.jokesFragment.JokesFragment"
         android:label="JokesFragment" />
     <fragment
         android:id="@+id/webFragment"
-        android:name="ru.barinov.jokesapplication.ui.WebFragment"
+        android:name="ru.barinov.jokesapplication.ui.webFragment.WebFragment"
         android:label="WebFragment" />
 </navigation>

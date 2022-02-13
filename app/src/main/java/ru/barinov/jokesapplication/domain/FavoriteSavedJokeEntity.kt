@@ -2,6 +2,7 @@ package ru.barinov.jokesapplication.domain
 
 import androidx.room.*
 import ru.barinov.jokesapplication.ui.*
+import ru.barinov.jokesapplication.ui.uiModels.RecyclerViewItemModel
 
 @Entity(tableName = "favorite_jokes")
 data class FavoriteSavedJokeEntity(

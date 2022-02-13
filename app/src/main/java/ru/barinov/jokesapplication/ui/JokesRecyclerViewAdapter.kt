@@ -5,6 +5,7 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.*
 import ru.barinov.jokesapplication.R
 import ru.barinov.jokesapplication.databinding.JokeItemLayoutBinding
+import ru.barinov.jokesapplication.ui.uiModels.RecyclerViewItemModel
 
 class JokesRecyclerViewAdapter: RecyclerView.Adapter<JokeItemViewHolder>() {
 
@@ -27,9 +28,7 @@ class JokesRecyclerViewAdapter: RecyclerView.Adapter<JokeItemViewHolder>() {
             item.listener.onFavoriteButtonPressed(item){isFavorite->
                 setFavoriteButtonState(isFavorite, holder.favoriteButton)
             }
-//
         }
-
     }
 
     private fun setFavoriteButtonState(isFavorite: Boolean, favButton: ImageButton) {
@@ -41,15 +40,10 @@ class JokesRecyclerViewAdapter: RecyclerView.Adapter<JokeItemViewHolder>() {
 
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int = itemList.size
 
-        return itemList.size
-    }
+    private fun getItem(position: Int): RecyclerViewItemModel = itemList[position]
 
-    private fun getItem(position: Int): RecyclerViewItemModel{
-
-        return itemList[position]
-    }
 
     fun setItems(newData: List<RecyclerViewItemModel>){
         val result = DiffUtil.calculateDiff(DiffCallback(itemList, newData), true)

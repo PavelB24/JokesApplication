@@ -1,6 +1,7 @@
 package ru.barinov.jokesapplication.domain
 
 import ru.barinov.jokesapplication.ui.*
+import ru.barinov.jokesapplication.ui.uiModels.RecyclerViewItemModel
 
 open class LoadedJokeEntity(
     val id: Int,

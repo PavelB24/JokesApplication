@@ -3,4 +3,7 @@
     <string name="appbar_show_favorites_button_title">Show Favorites</string>
     <string name="jokes_navigation_item_title">Jokes</string>
     <string name="web_navigation_item_title">Web</string>
+    <string name="insert_number_of_jokes_hint">Insert value</string>
+    <string name="reset_button_text">RESET</string>
+    <string name="item_favorite_button_description">Add or delete from favorites</string>
 </resources>

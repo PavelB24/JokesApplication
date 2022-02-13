@@ -1,13 +1,13 @@
-package ru.barinov.jokesapplication.ui
+package ru.barinov.jokesapplication.ui.jokesFragment
 
-import android.widget.ImageButton
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import ru.barinov.jokesapplication.R
 import ru.barinov.jokesapplication.data.localRepository.LocalRepository
 import ru.barinov.jokesapplication.data.remoteRepository.ChuckNorrisApiService
 import ru.barinov.jokesapplication.domain.*
+import ru.barinov.jokesapplication.ui.*
+import ru.barinov.jokesapplication.ui.uiModels.*
 import java.lang.Exception
 
 class JokesViewModel(

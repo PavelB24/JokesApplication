@@ -1,4 +1,4 @@
-package ru.barinov.jokesapplication
+package ru.barinov.jokesapplication.core
 
 import androidx.room.Room
 import me.sianaki.flowretrofitadapter.FlowCallAdapterFactory
@@ -11,16 +11,14 @@ import ru.barinov.jokesapplication.data.localDataBase.*
 import ru.barinov.jokesapplication.data.localRepository.*
 import ru.barinov.jokesapplication.data.remoteDataBaseLoader.ChuckNorrisAPI
 import ru.barinov.jokesapplication.data.remoteRepository.*
-import ru.barinov.jokesapplication.ui.JokesViewModel
-
-private const val BASE_URL = "https://api.icndb.com/"
+import ru.barinov.jokesapplication.ui.jokesFragment.*
 
 val appModule = module {
 
     single<Retrofit> {
         Retrofit
             .Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(JokesFragment.BASE_URL)
             .addCallAdapterFactory(FlowCallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create()).build()
     }

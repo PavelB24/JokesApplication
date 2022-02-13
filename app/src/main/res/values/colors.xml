@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="secondary_color">#fff0e8</color>
     <color name="prime_color">#D59A91</color>
+    <color name="joke_item_background">#805C5353</color>
 </resources>

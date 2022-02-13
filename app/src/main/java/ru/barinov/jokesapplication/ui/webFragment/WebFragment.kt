@@ -1,4 +1,4 @@
-package ru.barinov.jokesapplication.ui
+package ru.barinov.jokesapplication.ui.webFragment
 
 import android.annotation.SuppressLint
 import android.os.*
@@ -32,7 +32,8 @@ class WebFragment: Fragment() {
     }
 
     private fun overrideOnBackPressed() {
-        requireActivity().onBackPressedDispatcher.addCallback( this, object: OnBackPressedCallback(true){
+        requireActivity().onBackPressedDispatcher.addCallback(this,
+            object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 if(webView.canGoBack()){
                     webView.goBack()
@@ -54,12 +55,12 @@ class WebFragment: Fragment() {
     }
 
     private fun initWebView( savedInstanceState: Bundle?) {
+
         webView = binding.webView
         if(savedInstanceState!=null){
             webView.restoreState(savedInstanceState)
         } else{
             webView.loadUrl(BASE_URL)
-
         }
     }
 
@@ -71,9 +72,9 @@ class WebFragment: Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun setWebViewSettings() {
+
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        webView.settings.allowFileAccess = true
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
