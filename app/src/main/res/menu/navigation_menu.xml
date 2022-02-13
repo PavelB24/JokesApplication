@@ -4,12 +4,12 @@
     <item
         android:id="@+id/jokesFragment"
         android:icon="@drawable/ic_joker"
-        android:title="Statistic"
+        android:title="@string/jokes_navigation_item_title"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/webFragment"
         android:icon="@drawable/ic_web_svgrepo_com"
-        android:title="Routs Map"
+        android:title="@string/web_navigation_item_title"
         app:showAsAction="ifRoom"/>
 
 

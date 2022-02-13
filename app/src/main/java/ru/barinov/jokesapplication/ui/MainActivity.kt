@@ -19,4 +19,12 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setupWithNavController(findNavController(R.id.fragment_host))
 
     }
+
+    override fun onBackPressed() {
+        val vebFragment = supportFragmentManager.findFragmentById(R.id.webFragment)
+        if(vebFragment!= null){
+
+        }
+        super.onBackPressed()
+    }
 }
