@@ -2,8 +2,6 @@ package ru.barinov.jokesapplication.ui.jokesFragment
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toolbar
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
